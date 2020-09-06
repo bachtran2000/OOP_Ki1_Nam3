@@ -72,16 +72,15 @@ public class a_b_c {
     }
 
     public static void sort(int[][] a) {
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
-                for (int x = 0; x < n; x++)
-                    if (a[i][j] > a[i][x]) {
-                        int tmp = a[i][j];
-                        a[i][j] = a[i][x];
-                        a[i][x] = tmp;
+        for(int i=0;i<n;i++)
+            for(int j=0;j<m-1;j++)
+                for(int k=j+1;k<m;k++)
+                    if (a[j][i]>a[k][i])
+                    {
+                        int tmp=a[j][i];
+                        a[j][i]=a[k][i];
+                        a[k][i]=tmp;
                     }
-            }
-        }
         Out(a);
     }
 
