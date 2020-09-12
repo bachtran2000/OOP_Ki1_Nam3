@@ -31,8 +31,6 @@ public class bai7 {
         System.out.println("Tong duong cheo phu = "+sump);
     }
 
-
-
     public static void main(String[] args) {
         int[][] matrix = new int[100][100];
         int n;
