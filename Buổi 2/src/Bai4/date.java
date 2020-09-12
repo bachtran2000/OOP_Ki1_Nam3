@@ -84,19 +84,6 @@ public class date {
         return bResult;
     }
 
-    public void timNgayHomTruoc(int nDay, int nMonth, int nYear) {
-        nDay--;
-        if (nDay == 0) {
-            nMonth--;
-            if (nMonth == 0) {
-                nMonth = 12;
-                nYear--;
-            }
-            nDay = tinhSoNgayTrongThang(nMonth, nYear);
-        }
-        System.out.println("Yesterday: " + nDay + " / " + nMonth + " / " + nYear);
-    }
-
     public void timNgayHomSau(int nDay, int nMonth, int nYear) {
         nDay++;
         if (nDay > tinhSoNgayTrongThang(nMonth, nYear)) {
@@ -116,12 +103,6 @@ public class date {
             int tmpDay = nDay;
             int tmpMonth = nMonth;
             int tmpYear = nYear;
-
-            timNgayHomTruoc(tmpDay, tmpMonth, tmpYear);
-
-            tmpDay = nDay;
-            tmpMonth = nMonth;
-            tmpYear = nYear;
 
             timNgayHomSau(tmpDay, tmpMonth, tmpYear);
         } else {
