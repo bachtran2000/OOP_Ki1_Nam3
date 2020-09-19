@@ -18,13 +18,12 @@ public class bai1 {
                     mn.Xuat();
                     break;
                 case 3:
-                    mn.sapxep();
+                    mn.sapxep_giam();
                     break;
                 case 4:
                     mn.find();
                     break;
                 case 5:
-
                     return;
             }
         }

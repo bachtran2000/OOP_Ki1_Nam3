@@ -35,22 +35,17 @@ public class Manager {
 
     public void Xuat() {
         System.out.println("Danh sach sinh vien:");
-        System.out.printf("%10s|%10s|%10s|%10s\n","Ma SV","Ten","Nam sinh","Diem TB");
+        System.out.printf("%10s|%10s|%10s|%10s|%10s\n","Ma SV","Ten","Nam sinh","Diem TB","Xep loai");
         for (int i = 0; i < n; i++) {
 
             sv[i].Xuat();
         }
     }
 
-    public enum Xeploai {
-
-
-    }
-
-    public void sapxep() {
+    public void sapxep_giam() {
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                if (sv[i].getDiemTB() > sv[j].getDiemTB()) {
+                if (sv[j].getDiemTB() > sv[i].getDiemTB()) {
                     SinhVien tmp = sv[j];
                     sv[j] = sv[i];
                     sv[i] = tmp;
@@ -63,11 +58,15 @@ public class Manager {
     public void  find(){
         System.out.print("Nhap vao thong tin tim kiem: ");
         String find_MSV;
+        int flag=0;
         find_MSV = new Scanner(System.in).nextLine();
         for (int i=0;i<n;i++){
-            if (find_MSV == sv[i].getMaSV())
+            if (find_MSV == sv[i].getMaSV()) {
                 sv[i].Xuat();
+                flag++;
+            }
         }
+        if (flag==0) System.out.println("Khong tim thay nguoi da nhap!");
     }
 
 }

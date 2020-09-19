@@ -5,11 +5,15 @@ import java.util.Scanner;
 public class SinhVien extends Nguoi {
     private String maSV;
     private float diemTB;
+    private String XL;
 
-    public SinhVien(String maSV, float diemTB) {
-        super();
+    public SinhVien() {
+    }
+
+    public SinhVien(String maSV, float diemTB, String XL) {
         this.maSV = maSV;
         this.diemTB = diemTB;
+        this.XL = XL;
     }
 
     public String getMaSV() {
@@ -28,8 +32,12 @@ public class SinhVien extends Nguoi {
         this.diemTB = diemTB;
     }
 
-    public SinhVien() {
+    public String getXL() {
+        return XL;
+    }
 
+    public void setXL(String XL) {
+        this.XL = XL;
     }
 
     public void Nhap(){
@@ -43,9 +51,29 @@ public class SinhVien extends Nguoi {
     }
 
     public void Xuat(){
+        XepLoai();
         System.out.printf("%10s|",maSV);
         super.Xuat();
-        System.out.printf("%2.2f",diemTB);
-        System.out.println();
+        System.out.printf("%10.2f|",diemTB);
+        System.out.printf("%10s\n",XL);
     }
+
+    public void XepLoai(){
+        if (diemTB<=4 && diemTB>=0)
+            XL= String.valueOf(Level.Yeu);
+        else if (diemTB>4 && diemTB<=6)
+            XL= String.valueOf(Level.TB);
+        else if (diemTB>6 && diemTB<=8)
+            XL= String.valueOf(Level.Kha);
+        else if (diemTB<=10 && diemTB>6)
+            XL= String.valueOf(Level.Gioi);
+    }
+
+    public enum Level{
+        Yeu,
+        TB,
+        Kha,
+        Gioi
+    }
+
 }
