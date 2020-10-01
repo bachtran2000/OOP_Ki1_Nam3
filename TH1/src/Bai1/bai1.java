@@ -1,7 +1,4 @@
-package com.company;
-
-import java.util.ArrayList;
-import java.util.Scanner;
+package Bai1;
 
 public class bai1 {
 
