@@ -5,9 +5,14 @@ import java.util.Scanner;
 public class KhoiA extends ThiSinh{
     private float DT,DL,DH;
 
+    public KhoiA(String SBD, String HT, String DC, String UT) {
+        super(SBD, HT, DC, UT);
+    }
+
     @Override
     public void Nhap() {
         super.Nhap();
+
         System.out.print("Nhap diem toan: ");
         DT = new Scanner(System.in).nextFloat();
         System.out.print("Nhap diem ly: ");

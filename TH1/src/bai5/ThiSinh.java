@@ -8,6 +8,13 @@ public class ThiSinh {
     public ThiSinh() {
     }
 
+    public ThiSinh(String SBD, String HT, String DC, String UT) {
+        this.SBD = SBD;
+        this.HT = HT;
+        this.DC = DC;
+        this.UT = UT;
+    }
+
     public String getSBD() {
         return SBD;
     }

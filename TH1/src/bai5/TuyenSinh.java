@@ -13,7 +13,7 @@ public class TuyenSinh {
             chon = new Scanner(System.in).nextLine();
             switch (chon){
                 case "A":
-                    ThiSinh khoia = new KhoiA();
+                    ThiSinh khoia = new KhoiA("","","","");
                     khoia.Nhap();
                     ts.add(khoia);
                     break;
