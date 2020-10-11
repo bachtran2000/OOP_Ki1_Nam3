@@ -235,9 +235,7 @@ public class formsv extends javax.swing.JPanel {
 
     private void btn_themActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_themActionPerformed
         // TODO add your handling code here:
-        if {
-            
-        }
+      
     }//GEN-LAST:event_btn_themActionPerformed
 
     private void btn_resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_resetActionPerformed

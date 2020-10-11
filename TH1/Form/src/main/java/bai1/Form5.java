@@ -332,8 +332,9 @@ public class Form5 extends javax.swing.JFrame {
             } else {
                 if (KiemTraRongSVMM() == false) {
                     try {
-                        SinhVienMM mm = new SinhVienMM(tfMasv.getText(), tfHoten.getText(), tfNgaysinh.getText(), nam.isSelected() ? "nam" : "nu",
-                                Float.parseFloat(tfDiemTB.getText()), Float.parseFloat(tfLuong.getText()));
+                        SinhVienMM mm;
+                        mm = new SinhVienMM(tfMasv.getText(), tfHoten.getText(), tfNgaysinh.getText(), nam.isSelected() ? "nam" : "nu",
+                                Float.parseFloat(tfDiemTB.toString()), Float.parseFloat(tfLuong.getText()));
                         FileWriter fw = new FileWriter("svmm.dat", true);
                         BufferedWriter bw = new BufferedWriter(fw);
                         bw.append(mm.MaSV + "$" + mm.HoTen + "$" + mm.NgaySinh + "$" + mm.GioiTinh + "$" + mm.DiemTB + "$" + "$" + mm.getLuong());
@@ -354,47 +355,53 @@ public class Form5 extends javax.swing.JFrame {
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         // TODO add your handling code here:
-        if (svmm.isSelected()) {
-            SinhVienMM svmmn = new SinhVienMM();
-            svmmn.setMasv(tfMasv.getText());
-            svmmn.setHoTen(tfHoten.getText());
-            svmmn.setGioiTinh(buttonGroup2.getSelectedItem().toString());
+        String empty="";
+        if ((tfHoten.getText().equals(empty))||(tfNgaysinh.getText().equals(empty)) ||(tfMasv.getText().equals(empty)) ){
+            JOptionPane.showMessageDialog(rootPane, "Nhập đầy đủ thông tin!");
+        }
+        if (svmm.isSelected()){
+            SinhVienMM m =new SinhVienMM();
+            m.setMaSV(tfMasv.getText());
+            m.setHoTen(tfHoten.getText());
+            m.setGioiTinh(buttonGroup2.getSelection().toString());
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
             try {
-                svmmn.setNgaySinh(sdf.parse(tfNgaysinh.getText()));
+               
             } catch (ParseException ex) {
-                Logger.getLogger(Form5.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Form5.class.getName()).log(Level.SEVERE,null,ex);
             }
-
-            svmmn.setDiemTB(Float.parseFloat(tfDiemTB.getText()));
             try {
-                svmmn.setLuong(Float.parseFloat(tfLuong.getText()));
-                ds.add(svmmn);
-                System.out.println(ds.toString());
+                m.setDiemTB(Float.parseFloat(tfDiemTB.getText()));
+                m.setLuong(Float.parseFloat(tfLuong.getText()));} catch (NumberFormatException e) {
+            }
+            ds.add(m);
+            model.addRow(new Object[]{m.getMaSV(), m.getHoTen(), m.getNgaySinh(), m.getDiemTB(),m.getLuong(),""});
+            JOptionPane.showMessageDialog(rootPane, "Thêm thành công 1 SVMM!");
+        }
+        else
+        if (svattt.isSelected()){
+            SinhVienTT t = new SinhVienTT();
+            t.setMaSV(tfMasv.getText());
+            t.setHoTen(tfMasv.getText());
+            t.setGioiTinh(buttonGroup2.getSelection().toString());
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+            try {
                 
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            model.addRow(new Object[]{svmmn.getMaSV(), svmmn.getHoTen(), svmmn.getNgaySinh(), svmmn.getDiemTB()});
-            JOptionPane.showMessageDialog(rootPane, "Them thanh cong");
-        } else if (svattt.isSelected()) {
-            SinhVienTT svhtn = new SinhVienTT();
-            svhtn.setMaSV(tfMasv.getText());
-            svhtn.setHoTen(tfHoten.getText());
-            SimpleDateFormat sdf = new SimpleDateFormat("dd/mm/yyyy");
-            try {
-                svhtn.setNgaySinh(sdf.parse(tfNgaysinh.getText()));
             } catch (ParseException ex) {
                 Logger.getLogger(Form5.class.getName()).log(Level.SEVERE, null, ex);
             }
-            svhtn.setGioiTinh(buttonGroup2.getSelection().toString());
-            svhtn.setHocPhi(Float.parseFloat(tfHocphi.getText()));
-            ds2.add(svhtn);
-            System.out.println(ds2.toString());
-            JOptionPane.showMessageDialog(rootPane, "Them sinh vien ht thanh cong");
-
-        } else {
-            JOptionPane.showMessageDialog(rootPane, "Ban phai chon sinh vien");
+            try {
+                t.setDiemTB(Float.parseFloat(tfDiemTB.getText()));
+                t.setHocPhi(Float.parseFloat(tfHocphi.getText()));
+            } catch (NumberFormatException e) {
+            }
+            ds2.add(t);
+            System.out.println(t.toString());
+            JOptionPane.showMessageDialog(rootPane, "Thêm thành công 1 SVTT!");
+            model.addRow(new Object[]{t.getMaSV(), t.getHoTen(), t.getNgaySinh(), t.getDiemTB(),"",t.getHocPhi()});
+        }
+        else{
+            JOptionPane.showMessageDialog(rootPane, "Chọn loại sinh viên!!!");
         }
     }//GEN-LAST:event_btnAddActionPerformed
 
@@ -414,30 +421,7 @@ public class Form5 extends javax.swing.JFrame {
         tfNgaysinh.setText("");
         tfLuong.setText("");
     }//GEN-LAST:event_btnResetActionPerformed
-
-    public void luufile(ArrayList<SinhVienTT> list, ArrayList<SinhVienMM> list2, String path1, String path2) {
-        try {
-            FileWriter fw = new FileWriter(path1);
-            BufferedWriter bw = new BufferedWriter(fw);
-            for (SinhVienTT sinhVienTT : list) {
-                bw.write(sinhVienTT.toString());
-            }
-            bw.close();
-            fw.close();
-            FileWriter fw1 = new FileWriter(path2);
-            BufferedWriter bw1 = new BufferedWriter(fw1);
-            for (SinhVienMM sinhVienMM : list2) {
-                bw1.write(sinhVienMM.toString());
-            }
-            bw1.close();
-            fw1.close();
-        } catch (IOException ex) {
-            Logger.getLogger(Form5.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-    }
-
-    /**
+  /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
