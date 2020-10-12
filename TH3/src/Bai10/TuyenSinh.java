@@ -58,8 +58,8 @@ public class TuyenSinh {
                 ts.get(i).Xuat();
                 flag = flag + 1;
             }
-            if (flag == 0) System.out.println("Khong tim thay");
         }
+        if (flag == 0) System.out.println("Khong tim thay");
     }
 
     public void WriteFile() {
@@ -68,7 +68,7 @@ public class TuyenSinh {
             File f = new File("Tuyensinh.txt");
             FileWriter fw = new FileWriter(f);
             //Bước 2: Ghi dữ liệu
-            for (int i = 0; i < ts.size() ; i++) {
+            for (int i = 0; i < ts.size(); i++) {
                 fw.write(ts.get(i).TTTS());
                 fw.write("\n");
             }
@@ -79,7 +79,7 @@ public class TuyenSinh {
         }
     }
 
-    public void ReadFile(){
+    public void ReadFile() {
         try {
             //Bước 1: Tạo đối tượng luồng và liên kết nguồn dữ liệu
             File f = new File("Tuyensinh.txt");
@@ -88,15 +88,24 @@ public class TuyenSinh {
             BufferedReader br = new BufferedReader(fr);
             String line;
             System.out.println("File da ghi:");
-            while ((line = br.readLine()) != null){
+            while ((line = br.readLine()) != null) {
                 System.out.println(line);
             }
             //Bước 3: Đóng luồng
             fr.close();
             br.close();
         } catch (Exception ex) {
-            System.out.println("Loi doc file: "+ex);
+            System.out.println("Loi doc file: " + ex);
         }
     }
 
+
+    public void menu() {
+        System.out.println("1. Nhap thong tin thi sinh");
+        System.out.println("2. Ghi thong tin thi sinh vao file");
+        System.out.println("3. Xuat thong tin thi sinh tu file");
+        System.out.println("4. Tim kiem sinh vien theo sbd");
+        System.out.println("5. Ket thuc");
+        System.out.print("Chon: ");
+    }
 }

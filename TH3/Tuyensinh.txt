@@ -1,3 +1,3 @@
 SBD: 1 $ Ho va ten: 1 $ Dia chi:  $ Uu tien: 1 $ Diem toan: 1.0 $ Diem ly: 1.0 $ Diem Hoa: 1.0
-SBD: 2 $ Ho va ten:  $ Dia chi: 2 $ Uu tien: 2 $ Diem toan: 2.0 $ Diem Sinh: 2.0 $ Diem Hoa: 2.0
-SBD: 3 $ Ho va ten: 3 $ Dia chi: 3 $ Uu tien: 3 $ Diem Van: 3.0 $ Diem Su: 3.0 $ Diem Dia: 3.0
+SBD: 2 $ Ho va ten: 2 $ Dia chi: 2 $ Uu tien: 2 $ Diem toan: 2.0 $ Diem Sinh: 2.0 $ Diem Hoa: 2.0
+SBD: 3 $ Ho va ten: 3 $ Dia chi: 3 $ Uu tien: 33 $ Diem Van: 3.0 $ Diem Su: 3.0 $ Diem Dia: 3.0
