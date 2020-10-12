@@ -1,4 +1,4 @@
-package bai5;
+package Bai10;
 
 import java.util.Scanner;
 
@@ -55,5 +55,12 @@ public class ThiSinh {
                 ", DC='" + DC + '\'' +
                 ", UT='" + UT + '\'' +
                 '}';
+    }
+
+    public float getDT() {
+        return 0;
+    }
+
+    public float getDL() {
     }
 }

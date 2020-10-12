@@ -1,9 +1,41 @@
-package bai5;
+package Bai10;
 
 import java.util.Scanner;
 
 public class KhoiB extends ThiSinh{
     private float DT,DH,DS;
+
+    public float getDT() {
+        return DT;
+    }
+
+    public void setDT(float DT) {
+        this.DT = DT;
+    }
+
+    public float getDH() {
+        return DH;
+    }
+
+    public void setDH(float DH) {
+        this.DH = DH;
+    }
+
+    public float getDS() {
+        return DS;
+    }
+
+    public void setDS(float DS) {
+        this.DS = DS;
+    }
+
+    public ThiSinh getTs() {
+        return ts;
+    }
+
+    public void setTs(ThiSinh ts) {
+        this.ts = ts;
+    }
 
     @Override
     public void Nhap() {
@@ -20,6 +52,6 @@ public class KhoiB extends ThiSinh{
     public void Xuat() {
         super.Xuat();
         System.out.printf("%10s|%10s|%10s|\n","Diem Toan","Diem Sinh","Diem Hoa");
-        System.out.printf("%4s|%20s|%20s|%10s|%10.2f|%10.2f|%10.2f|\n",ts.getSBD(),ts.getHT(),ts.getDC(),ts.getUT(),DT,DS,DH);
+        System.out.printf("%4s|%20s|%20s|%10s|%10.2f|%10.2f|%10.2f|\n",SBD,HT,DC,UT,DT,DS,DH);
     }
 }
