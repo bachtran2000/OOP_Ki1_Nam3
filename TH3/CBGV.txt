@@ -1,0 +1,1 @@
+Ho ten: 1| Nam sinh: 1| Que quan: 1| Luong cung: 1.0| Thuong: 1.0| Phat: 11.0| Luong thuc linh: -9.0
