@@ -57,10 +57,11 @@ public class ThiSinh {
                 '}';
     }
 
-    public float getDT() {
-        return 0;
+    public String TTTS(){
+        return "SBD: "+getSBD()+" $ Ho va ten: "+getHT()+" $ Dia chi: "+getDC()+" $ Uu tien: "+getUT();
     }
 
-    public float getDL() {
+    public float getDiem() {
+        return -1;
     }
 }

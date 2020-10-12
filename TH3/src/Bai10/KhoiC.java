@@ -55,4 +55,8 @@ public class KhoiC extends ThiSinh{
         System.out.printf("%10s|%10s|%10s|\n","Diem Van","Diem Su","Diem Dia");
         System.out.printf("%4s|%20s|%20s|%10s|%10.2f|%10.2f|%10.2f|\n",SBD,HT,DC,UT,DV,DS,DD);
     }
+
+    public String TTTS(){
+        return super.TTTS()+" $ Diem Van: "+DV+" $ Diem Su: "+DS + " $ Diem Dia: "+DD;
+    }
 }

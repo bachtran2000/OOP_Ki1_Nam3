@@ -54,4 +54,9 @@ public class KhoiB extends ThiSinh{
         System.out.printf("%10s|%10s|%10s|\n","Diem Toan","Diem Sinh","Diem Hoa");
         System.out.printf("%4s|%20s|%20s|%10s|%10.2f|%10.2f|%10.2f|\n",SBD,HT,DC,UT,DT,DS,DH);
     }
+
+    public String TTTS(){
+        return super.TTTS()+" $ Diem toan: "+DT+" $ Diem Sinh: "+DS + " $ Diem Hoa: "+DH;
+    }
+
 }

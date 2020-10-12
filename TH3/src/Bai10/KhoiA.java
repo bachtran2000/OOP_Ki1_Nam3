@@ -9,37 +9,6 @@ public class KhoiA extends ThiSinh{
         super(SBD, HT, DC, UT);
     }
 
-    public float getDT() {
-        return DT;
-    }
-
-    public void setDT(float DT) {
-        this.DT = DT;
-    }
-
-    public float getDL() {
-        return DL;
-    }
-
-    public void setDL(float DL) {
-        this.DL = DL;
-    }
-
-    public float getDH() {
-        return DH;
-    }
-
-    public void setDH(float DH) {
-        this.DH = DH;
-    }
-
-    public ThiSinh getTs() {
-        return ts;
-    }
-
-    public void setTs(ThiSinh ts) {
-        this.ts = ts;
-    }
 
     @Override
     public void Nhap() {
@@ -60,5 +29,9 @@ public class KhoiA extends ThiSinh{
         System.out.printf("%4s|%20s|%20s|%10s|%10.2f|%10.2f|%10.2f|\n",SBD,HT,DC,UT,DT,DL,DH);
     }
 
+    public String TTTS(){
+        return super.TTTS()+" $ Diem toan: "+DT+" $ Diem ly: "+DL + " $ Diem Hoa: "+DH;
+
+    }
 
 }

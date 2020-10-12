@@ -69,7 +69,8 @@ public class TuyenSinh {
             FileWriter fw = new FileWriter(f);
             //Bước 2: Ghi dữ liệu
             for (int i = 0; i < ts.size() ; i++) {
-                fw.write("SBD: "+ts.get(i).getSBD()+" $ Ho va ten: "+ts.get(i).getHT()+" $ Dia chi: "+ts.get(i).getDC()+" $ Uu tien: "+ts.get(i).getUT()+" $ Diem toan: "+ts.get(i).getDT()+" $ Diem ly: "+ts.get(i).getDL());
+                fw.write(ts.get(i).TTTS());
+                fw.write("\n");
             }
             //Bước 3: Đóng luồng
             fw.close();
@@ -88,7 +89,6 @@ public class TuyenSinh {
             String line;
             System.out.println("File da ghi:");
             while ((line = br.readLine()) != null){
-
                 System.out.println(line);
             }
             //Bước 3: Đóng luồng
